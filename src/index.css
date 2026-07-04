@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* ==========================================================================
+   CYBERPUNK THEME STYLE SHEET (CORES DO BRASIL EDITION)
+   Aggressive high-contrast neon green, gold/yellow, blue and deep black
+   ========================================================================== */
+
+.theme-cyberpunk {
+  --neon-green: #00ff66;
+  --neon-green-glow: rgba(0, 255, 102, 0.45);
+  --neon-yellow: #ffe600;
+  --neon-yellow-glow: rgba(255, 230, 0, 0.45);
+  --neon-blue: #00bfff;
+  --neon-blue-glow: rgba(0, 191, 255, 0.45);
+  --deep-black: #000000;
+  --dark-gray: #050505;
+  --text-light: #e6fffa;
+  
+  background-color: var(--deep-black) !important;
+  color: var(--text-light) !important;
+}
+
+/* Overriding background classes to deep black */
+.theme-cyberpunk,
+.theme-cyberpunk .min-h-screen,
+.theme-cyberpunk aside,
+.theme-cyberpunk header,
+.theme-cyberpunk footer,
+.theme-cyberpunk main,
+.theme-cyberpunk .bg-\[\#05070a\],
+.theme-cyberpunk .bg-\[\#080a0f\],
+.theme-cyberpunk .bg-\[\#0a0d14\],
+.theme-cyberpunk .bg-\[\#03060c\],
+.theme-cyberpunk .bg-slate-900,
+.theme-cyberpunk .bg-slate-950,
+.theme-cyberpunk .bg-\[\#070E1B\]\/80,
+.theme-cyberpunk .bg-\[\#0a0d14\]\/60,
+.theme-cyberpunk .bg-\[\#050A14\],
+.theme-cyberpunk .bg-\[\#040811\],
+.theme-cyberpunk .bg-slate-950\/80,
+.theme-cyberpunk .bg-slate-950\/40,
+.theme-cyberpunk .bg-\[\#020408\],
+.theme-cyberpunk .bg-\[\#0b132b\]\/40 {
+  background-color: var(--deep-black) !important;
+}
+
+/* Force panel separations to be aggressive neon green/yellow/blue borders */
+.theme-cyberpunk .border-slate-800,
+.theme-cyberpunk .border-slate-800\/60,
+.theme-cyberpunk .border-cyan-950\/40,
+.theme-cyberpunk .border-cyan-950\/60,
+.theme-cyberpunk .border-cyan-800\/30,
+.theme-cyberpunk .border-slate-700,
+.theme-cyberpunk .border-slate-900 {
+  border-color: var(--neon-green) !important;
+  box-shadow: 0 0 6px var(--neon-green-glow);
+}
+
+/* Core headers and high-contrast texts */
+.theme-cyberpunk h1,
+.theme-cyberpunk h2,
+.theme-cyberpunk h3,
+.theme-cyberpunk h4,
+.theme-cyberpunk .text-white,
+.theme-cyberpunk .text-slate-100 {
+  color: var(--neon-yellow) !important;
+  text-shadow: 0 0 8px var(--neon-yellow-glow);
+}
+
+/* Subtitles, labels and low-priority text */
+.theme-cyberpunk p,
+.theme-cyberpunk span,
+.theme-cyberpunk .text-slate-300,
+.theme-cyberpunk .text-slate-400,
+.theme-cyberpunk .text-slate-500,
+.theme-cyberpunk .text-gray-400,
+.theme-cyberpunk .text-slate-400\/80 {
+  color: var(--text-light) !important;
+}
+
+/* Buttons and dynamic interactive elements */
+.theme-cyberpunk button,
+.theme-cyberpunk .cursor-pointer {
+  border-color: var(--neon-blue) !important;
+}
+
+.theme-cyberpunk button:hover {
+  background-color: rgba(0, 255, 102, 0.15) !important;
+  box-shadow: 0 0 10px var(--neon-green-glow);
+  color: #ffffff !important;
+  border-color: var(--neon-green) !important;
+}
+
+/* Tab button specific active classes overrides */
+.theme-cyberpunk .bg-cyan-500,
+.theme-cyberpunk .text-black,
+.theme-cyberpunk .bg-cyan-500\/10 {
+  background-color: var(--neon-yellow) !important;
+  color: #000000 !important;
+  box-shadow: 0 0 12px var(--neon-yellow);
+  font-weight: 800;
+}
+
+/* Text area, input and inputs panels custom focus styling */
+.theme-cyberpunk input,
+.theme-cyberpunk textarea,
+.theme-cyberpunk select {
+  background-color: var(--deep-black) !important;
+  border-color: var(--neon-blue) !important;
+  color: var(--neon-yellow) !important;
+  box-shadow: inset 0 0 6px var(--neon-blue-glow);
+}
+
+.theme-cyberpunk input:focus,
+.theme-cyberpunk textarea:focus {
+  box-shadow: 0 0 10px var(--neon-yellow);
+  outline: none;
+}
+
+/* Glowing aesthetic accents */
+.theme-cyberpunk .shadow-2xl,
+.theme-cyberpunk .shadow-xl {
+  box-shadow: 0 0 25px rgba(0, 255, 102, 0.2) !important;
+}
+
+/* Custom laser fine control responsive animation */
+@keyframes laser-glow {
+  0%, 100% {
+    border-color: rgba(var(--laser-color, 16, 185, 129), 0.3);
+    box-shadow: 0 0 8px rgba(var(--laser-color, 16, 185, 129), 0.25), inset 0 0 4px rgba(var(--laser-color, 16, 185, 129), 0.1);
+  }
+  50% {
+    border-color: rgba(var(--laser-color, 16, 185, 129), 0.95);
+    box-shadow: 0 0 20px rgba(var(--laser-color, 16, 185, 129), 0.7), inset 0 0 10px rgba(var(--laser-color, 16, 185, 129), 0.35);
+  }
+}
+
+.laser-active-anim {
+  animation: laser-glow var(--laser-speed, 1s) infinite ease-in-out;
+}
+
+@keyframes mechanical-shake {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-0.8px, 0.6px) rotate(-0.15deg); }
+  40% { transform: translate(0.8px, -0.6px) rotate(0.15deg); }
+  60% { transform: translate(-0.6px, -0.6px) rotate(-0.1deg); }
+  80% { transform: translate(0.6px, 0.6px) rotate(0.1deg); }
+}
+
+.mechanical-shake-anim {
+  animation: mechanical-shake var(--shake-intensity, 0.15s) infinite linear;
+}
+
+/* Quartz Simulator Glows */
+.theme-cyberpunk .bg-\[radial-gradient\(circle_at_50\%_50\%\,rgba\(6\,182\,212\,0\.12\)\,transparent_75\%\)\] {
+  background-image: radial-gradient(circle at 50% 50%, rgba(0, 255, 102, 0.35), transparent 75%) !important;
+}
+
+/* Telemetry Logs Panel custom style */
+.theme-cyberpunk .bg-slate-950\/80 {
+  background-color: #020202 !important;
+  border-color: var(--neon-green) !important;
+}
+
+/* Custom cyber-grid background pattern for main container */
+.theme-cyberpunk .min-h-screen {
+  background-image: linear-gradient(rgba(0, 255, 102, 0.04) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 255, 102, 0.04) 1px, transparent 1px) !important;
+  background-size: 30px 30px !important;
+}

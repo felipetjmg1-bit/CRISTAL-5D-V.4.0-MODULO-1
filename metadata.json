@@ -1,0 +1,8 @@
+{
+  "name": "5D Crystal Storage Process",
+  "description": "Um simulador interativo de documentário e visualizador para o processo de armazenamento de dados em Cristal 5D e arquivamento soberano da rede DREX.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
