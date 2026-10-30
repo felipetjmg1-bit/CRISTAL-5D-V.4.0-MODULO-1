@@ -6,3 +6,11 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Arquivos locais e artefatos de desenvolvimento
+Thumbs.db
+.vite/
+.next/
+.turbo/
+.env
+!.env.local.example
